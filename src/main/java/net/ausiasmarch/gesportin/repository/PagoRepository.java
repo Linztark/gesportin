@@ -3,6 +3,7 @@ package net.ausiasmarch.gesportin.repository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
 
 import net.ausiasmarch.gesportin.entity.PagoEntity;
 
@@ -23,5 +24,6 @@ public interface PagoRepository extends JpaRepository<PagoEntity, Long> {
 
     Page<PagoEntity> findByAbonado(Integer abonado, Pageable oPageable);
 
-    Page<PagoEntity> findByIdAndAbonado(Long id, Integer abonado);
+    Optional<PagoEntity> findByIdAndAbonado(Long id, Integer abonado);
+
 }
