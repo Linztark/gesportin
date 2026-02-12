@@ -104,9 +104,6 @@ public class JugadorService {
         JugadorEntity oJugador = oJugadorRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Jugador no encontrado con id: " + id));
 
-                    if (oJugador.getPagos() > 0) {
-        throw new IllegalStateException("No se puede borrar un jugador con pagos asociados");
-    }
         oJugadorRepository.delete(oJugador);
         return id;
     }
